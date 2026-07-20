@@ -1,0 +1,12 @@
+# アップロードされた一時ファイル
+uploads/
+
+# Pythonのキャッシュ
+__pycache__/
+*.pyc
+
+# 環境設定ファイル
+.env
+
+# Windows
+Thumbs.db
