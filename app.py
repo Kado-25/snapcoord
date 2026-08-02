@@ -4,6 +4,7 @@ SnapCoord - Webアプリ版
 """
 
 import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 import numpy as np
 from PIL import Image
 from flask import Flask, request, render_template, jsonify
@@ -22,7 +23,7 @@ TOP_N = 5
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 print("モデルを読み込んでいます...")
-model = SentenceTransformer("clip-ViT-B-32")
+model = SentenceTransformer("clip-ViT-B-32",device="cpu")
 
 
 def get_color_histogram(image, resize_to=(100, 100)):
